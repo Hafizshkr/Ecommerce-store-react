@@ -1,8 +1,11 @@
-import React from 'react'
+import Navbar from '../../Components/Navbar'
 
 const SinglePage = () => {
   return (
-    <div>SinglePage</div>
+    <>
+    <Navbar />
+    <h1>Single Page product</h1>
+    </>
   )
 }
 
