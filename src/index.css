@@ -3,3 +3,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.bg-store {
+    background-image: url(/src/Asset/aguy.jpg);
+    background-size: cover;
+    background-position: center;
+    background-color: rgba(0, 0, 0, 1)
+}
