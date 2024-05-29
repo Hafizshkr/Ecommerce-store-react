@@ -19,7 +19,7 @@ const Card = ({ product }) => {
           </span>
           <span>
             <Link
-              to={`/SinglePage/${product.id}`}
+              to={`/product/${product.id}`}
               className="text-blue-800 font-semibold hover:font-bold"
             >
               More Info

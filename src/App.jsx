@@ -17,7 +17,8 @@ const App = () => {
           <Route path="/" element={<Homepage />} />
           <Route path="/About" element={<AboutUs />} />
           <Route path="/Store" element={<Store />} />
-          <Route path="/SinglePage/:productId" element={<SinglePage />} />
+          <Route path="/product/:productId" element={<SinglePage />} />
+          <Route path="/*" element={<NotFound />} />
         </Routes>
       </Router>
       </QueryClientProvider>
