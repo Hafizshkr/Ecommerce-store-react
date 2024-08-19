@@ -4,6 +4,9 @@ import Card from "./Components/Card";
 import HeaderStore from "./Sections/HeaderStore";
 
 const Store = () => {
+
+  
+
   const { isFetching, error, products } = useProducts();
   return (
     <>
