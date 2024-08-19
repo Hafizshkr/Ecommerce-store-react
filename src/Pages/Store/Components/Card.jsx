@@ -1,18 +1,23 @@
-import { useSelector,useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { addToCart } from "../Cart/cart";
 
+
 const Card = ({ product }) => {
-  const carts = useSelector(store => store.cart.items);
-  console.log(carts)
+  const cart = useSelector((store) => store.cart.items);
+  console.log(cart);
   const dispatch = useDispatch();
   const handleAddToCart = (product) => {
-    dispatch(addToCart({
-      productId: product.id,
-      quantity: 1
-    }))
-  }
- 
+    dispatch(
+      addToCart({
+        productId: product.id,
+        productTitle: product.title,
+        productPrice: product.price,
+        quantity: 1,
+      })
+    );
+  };
+
   return (
     <>
       <div
