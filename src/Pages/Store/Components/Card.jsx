@@ -1,23 +1,7 @@
-import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import { addToCart } from "../Cart/cart";
-
+import AddToCartButton from "../../../Components/AddToCartButton";
 
 const Card = ({ product }) => {
-  const cart = useSelector((store) => store.cart.items);
-  console.log(cart);
-  const dispatch = useDispatch();
-  const handleAddToCart = (product) => {
-    dispatch(
-      addToCart({
-        productId: product.id,
-        productTitle: product.title,
-        productPrice: product.price,
-        quantity: 1,
-      })
-    );
-  };
-
   return (
     <>
       <div
@@ -39,13 +23,11 @@ const Card = ({ product }) => {
           <span>
             <Link
               to={`/product/${product.id}`}
-              className="text-blue-800 font-semibold hover:font-bold"
+              className="text-blue-800 font-semibold hover:font-bold mr-2"
             >
               More Info
             </Link>
-            <button className="p-1 px-5 border rounded-3xl ml-2 bg-blue-200" onClick={()=>{handleAddToCart(product)}}>
-              Add to Cart
-            </button>
+            <AddToCartButton product={product} />
           </span>
         </div>
       </div>
