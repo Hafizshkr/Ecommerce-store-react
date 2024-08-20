@@ -1,29 +1,14 @@
 import Navbar from "../../Components/Navbar";
 import useProducts from "../../hooks/useProducts";
 import { useParams } from "react-router-dom";
-import { addToCart } from "../Store/Cart/cart";
-import { useDispatch, useSelector } from "react-redux";
-
+import AddToCartButton from "../../Components/AddToCartButton";
 
 const SinglePage = () => {
   const { productId } = useParams();
   const { products } = useProducts();
-  const cart = useSelector((store) => store.cart.items);
-  console.log(cart);
-  const dispatch = useDispatch();
   const product = products.find(
     (product) => product.id.toString() === productId
   );
-  const handleAddToCart = (product) => {
-    dispatch(
-      addToCart({
-        productId: product.id,
-        productTitle: product.title,
-        productPrice: product.price,
-        quantity: 1,
-      })
-    );
-  };
 
   return (
     <>
@@ -38,18 +23,10 @@ const SinglePage = () => {
             <p className="py-5">{product.description}</p>
             <span className="font-semibold py-5 ">RM {product.price}</span>
             <div className="button-section flex gap-3 py-5">
-              <button
-                className=" bg-orange-400 h-[30px] w-[120px] rounded-xl text-white"
-                onClick={() => {
-                  handleAddToCart(product);
-                }}
-              >
-                Add to cart
-              </button>
+              <AddToCartButton product={product} />
               <button className=" border border-orange-400 h-[30px] w-[120px] rounded-xl ">
                 Buy now
               </button>
-              
             </div>
           </div>
         </div>
