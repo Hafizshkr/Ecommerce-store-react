@@ -9,6 +9,7 @@ const AddToCartButton = ({ product }) => {
     dispatch(
       addToCart({
         productId: product.id,
+        productImage: product.thumbnail,
         productTitle: product.title,
         productPrice: product.price,
         quantity: 1,
