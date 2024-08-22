@@ -17,9 +17,11 @@ const Navbar = () => {
           About Us
         </NavLink>
       </ul>
-      <div className="">
+      <div>
         <button>
-          <FontAwesomeIcon icon={faCartShopping} />
+          <NavLink to="/Cart">
+            <FontAwesomeIcon icon={faCartShopping} />
+          </NavLink>
         </button>
       </div>
     </div>
