@@ -2,7 +2,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Navbar from "../../Components/Navbar";
 import { useDispatch, useSelector } from "react-redux";
 import { faX } from "@fortawesome/free-solid-svg-icons";
-import { quantifierMinus, quantifierPlus, removeFromCart } from "../Store/Cart/cart";
+import {
+  quantifierMinus,
+  quantifierPlus,
+  removeFromCart,
+} from "../Store/Cart/cart";
+import EmptyCart from "./section/EmptyCart";
 
 const CartPage = () => {
   const cartItems = useSelector((store) => store.cart.items);
@@ -15,8 +20,8 @@ const CartPage = () => {
     dispatch(quantifierPlus({ productId, quantity: 1 }));
   };
   const handleMinusItem = (productId) => {
-    dispatch(quantifierMinus({productId, quantity: 1}))
-  }
+    dispatch(quantifierMinus({ productId, quantity: 1 }));
+  };
 
   return (
     <>
@@ -24,11 +29,11 @@ const CartPage = () => {
       <div className="flex align-center justify-center min-h-screen ">
         <div className="flex align-center flex-col">
           <div>
-            <h1 className="text-center py-5 text-[34px]">Your Carts</h1>
+            <h1 className="py-10 "></h1>
           </div>
           <div className="px-5 py-5  w-[1200px]">
             {cartItems.length === 0 ? (
-              <p>Your cart is empty</p>
+              <EmptyCart />
             ) : (
               <table className="w-full h-full ">
                 <thead>
@@ -63,6 +68,7 @@ const CartPage = () => {
                         </td>
                         <td className="px-5 py-5 text-center">
                           <button
+                            className="border p-2 m-2"
                             onClick={() => {
                               handleAddItem(item.productId);
                             }}
@@ -71,6 +77,7 @@ const CartPage = () => {
                           </button>
                           {item.quantity}
                           <button
+                            className="border p-2 m-2"
                             onClick={() => {
                               handleMinusItem(item.productId);
                             }}
