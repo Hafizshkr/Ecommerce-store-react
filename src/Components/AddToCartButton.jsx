@@ -1,9 +1,7 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { addToCart } from "../Pages/Store/Cart/cart";
 
 const AddToCartButton = ({ product }) => {
-  const cart = useSelector((store) => store.cart.items);
-  console.log(cart);
   const dispatch = useDispatch();
   const handleAddToCart = () => {
     dispatch(
