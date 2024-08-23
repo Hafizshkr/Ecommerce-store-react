@@ -11,3 +11,9 @@
     background-position: center;
     background-color: rgba(0, 0, 0, 1)
 }
+
+.emptyCart {
+    background-image: url(/src/Asset/cartempty.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+}
