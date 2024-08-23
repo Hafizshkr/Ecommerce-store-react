@@ -8,6 +8,7 @@ import {
   removeFromCart,
 } from "../Store/Cart/cart";
 import EmptyCart from "./section/EmptyCart";
+import TotalPriceAndCheckout from "./section/TotalPriceAndCheckout";
 
 const CartPage = () => {
   const cartItems = useSelector((store) => store.cart.items);
@@ -103,6 +104,7 @@ const CartPage = () => {
               </table>
             )}
           </div>
+          <TotalPriceAndCheckout />
         </div>
       </div>
     </>
