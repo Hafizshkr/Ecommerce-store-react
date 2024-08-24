@@ -23,6 +23,12 @@ const CartPage = () => {
   const handleMinusItem = (productId) => {
     dispatch(quantifierMinus({ productId, quantity: 1 }));
   };
+  const totalCartPrice = cartItems.reduce((total,item) => {
+    const itemTotalPrice = (item.quantity * item.productPrice) 
+    console.log(total)
+    console.log(itemTotalPrice)
+    
+  }) 
 
   return (
     <>
@@ -102,9 +108,10 @@ const CartPage = () => {
                     ))}
                 </tbody>
               </table>
+              
             )}
           </div>
-          <TotalPriceAndCheckout />
+        <TotalPriceAndCheckout total={totalCartPrice} />
         </div>
       </div>
     </>

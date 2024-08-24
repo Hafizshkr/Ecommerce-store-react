@@ -1,11 +1,15 @@
 import React from "react";
 
-const TotalPriceAndCheckout = () => {
+const TotalPriceAndCheckout = ({total}) => {
+
+ 
+ 
   return (
-    <div className="bg-orange-50 text-right pr-5 ">
+    <div className="text-right pr-12 ">
       <div className="pb-5">
-        <p className="text-xl py-4">Total (0 item) : RM1000</p>
-        <button className="border bg-orange-400 rounded px-5 py-1">
+        <p className="text-xl py-4">Total (0 item) : RM {total}</p>
+        <p className="text-xl py-4"></p>
+        <button className="border bg-orange-400 rounded px-5 py-1 font-semibold hover:bg-white ">
           CHECK OUT
         </button>
       </div>
@@ -14,3 +18,4 @@ const TotalPriceAndCheckout = () => {
 };
 
 export default TotalPriceAndCheckout;
+ 
